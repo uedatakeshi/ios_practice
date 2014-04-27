@@ -25,6 +25,7 @@
     dog.voice = @"ワン！";
     [dog speak];
     [dog date];
+    [dog datecompare];
 }
 
 - (void)didReceiveMemoryWarning

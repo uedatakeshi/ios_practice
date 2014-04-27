@@ -12,5 +12,6 @@
 @property NSString *voice;
 - (void)speak;
 - (void)date;
+- (void)datecompare;
 
 @end

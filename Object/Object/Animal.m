@@ -53,4 +53,44 @@
     NSLog(@"%@", dayString);
 }
 
+- (void)datecompare
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy/MM/dd"];
+    NSDate *today = [NSDate date];
+    NSDate *eventDate = [formatter dateFromString:@"2014/01/15"];
+    NSTimeInterval secs = [eventDate timeIntervalSinceDate:today];
+    NSInteger dayes = round(secs / (60*60*24));
+    NSLog(@"あと %ld 日", dayes);
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy/MM/dd"];
+    NSDate *date1 = [df dateFromString:@"2013/07/10"];
+    NSDate *date2 = [df dateFromString:@"2013/07/16"];
+    
+    if ([date1 isEqualToDate:date2]) {
+        NSLog(@"同じ日");
+    } else {
+        NSLog(@"違う日");
+    }
+ 
+    NSDateFormatter *cdf = [[NSDateFormatter alloc] init];
+    [cdf setDateFormat:@"yyyy/MM/dd"];
+    NSDate *date3 = [cdf dateFromString:@"2013/07/10"];
+    NSDate *date4 = [cdf dateFromString:@"2013/07/10"];
+    NSComparisonResult result = [date3 compare:date4];
+    switch (result) {
+        case NSOrderedAscending:
+            NSLog(@"date3の方が古い");
+            break;
+        case NSOrderedDescending:
+            NSLog(@"date3の方が新し");
+            break;
+        case NSOrderedSame:
+            NSLog(@"同じ日");
+            break;
+        default:
+            break;
+    }
+}
 @end
