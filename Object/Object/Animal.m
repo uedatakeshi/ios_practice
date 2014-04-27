@@ -93,4 +93,13 @@
             break;
     }
 }
+
+- (void) moji
+{
+    NSString *name = @"オノ";
+    float point = 32.4;
+    NSString *result = (point>30 ? @" 合格" : @"不合格");
+    NSString *msg = [NSString stringWithFormat:@"%@ %@ (%.1f点)", result, name, point];
+    NSLog(@"%@", msg);
+}
 @end

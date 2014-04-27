@@ -13,5 +13,6 @@
 - (void)speak;
 - (void)date;
 - (void)datecompare;
+- (void)moji;
 
 @end

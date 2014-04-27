@@ -26,6 +26,7 @@
     [dog speak];
     [dog date];
     [dog datecompare];
+    [dog moji];
 }
 
 - (void)didReceiveMemoryWarning
